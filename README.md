@@ -1,6 +1,5 @@
 # DoorsOttawa
-Requirements
-The requirements for this app:
+#The requirements for this app:
 1. Starting (launch) activity: MainActivity. When the app first launches, the list of buildings is automatically fetched from the RESTful API server (https://doors-open-ottawa-hurdleg.mybluemix.net (Links to an external site.)).
 Notice: this is different behaviour from the labs.
 2. Improve the visual appearance of MainActivity.
