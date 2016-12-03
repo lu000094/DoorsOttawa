@@ -26,7 +26,7 @@ public class BuildingJSONParser {
 
                 building.setBuildingId(obj.getInt("buildingId"));
                 building.setName(obj.getString("name"));
-                building.setAddress(obj.getString("address"));
+                building.setAddress(obj.getString("address")+",Ottawa, Ontario");
                 building.setImage(obj.getString("image"));
 
                 buildingList.add(building);
