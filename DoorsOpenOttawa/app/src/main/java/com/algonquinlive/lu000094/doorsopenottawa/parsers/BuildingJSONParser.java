@@ -28,12 +28,22 @@ public class BuildingJSONParser {
                 building.setName(obj.getString("name"));
                 building.setAddress(obj.getString("address")+",Ottawa, Ontario");
                 building.setImage(obj.getString("image"));
-
+                building.setDescription(obj.getString("description"));
+                JSONArray open_hoursArray = obj.getJSONArray("open_hours");
+                for(int j = 0; j < open_hoursArray.length(); j++){
+                    JSONObject hourObj = open_hoursArray.getJSONObject(j);
+                    try {
+                        building.addDate(hourObj.getString("date"));
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
                 buildingList.add(building);
             }
 
             return buildingList;
         } catch (JSONException e) {
+
             e.printStackTrace();
             return null;
         }

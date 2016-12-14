@@ -1,11 +1,28 @@
 package com.algonquinlive.lu000094.doorsopenottawa.model;
 
 
-public class Building {
+import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Building implements Serializable{
     private int buildingId;
     private String name;
     private String address;
     private String image;
+    private String description;
+    transient private Bitmap bitmap;
+    private List<String> openHours;
+
+    public Building(){
+        openHours = new ArrayList<>();
+    }
 
     public int getBuildingId() {
         return buildingId;
@@ -37,6 +54,30 @@ public class Building {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<String> getOpenHours() {
+        return openHours;
+    }
+
+    public void addDate(String date){
+        openHours.add(date);
     }
 }
 
